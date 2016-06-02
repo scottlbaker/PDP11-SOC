@@ -1,7 +1,7 @@
 
 ## Summary
 
-This project is an SOC (System on a Chip) coded in VHDL and implemented for the Lattice iCE40-hx8k dev board. The SOC contains the following components: PDP-11/20 CPU + 8kx16 RAM + UART + Timer + I/O Ports
+This project is an SOC (System on a Chip) coded in VHDL and implemented for the Lattice iCE40-hx8k dev board. The SOC contains the following components: PDP-11/20 CPU + RAM + UART + Timer + I/O Ports
 
 ## Required Hardware
 
@@ -41,6 +41,19 @@ PORTA[6]   B3
 PORTA[7]   C3
 RESET      N3 -pullup yes
 CLK        J3 -pullup yes
+```
+
+## Memory Map
+
+The memory map of this SOC is as follows:
+```
+$0000 -> $1FFF  8k RAM
+$F000 -> $F006  UART registers
+$F008 -> $F00A  Timer registers
+$F00C           Output port register
+$F00E           Interrupt mask register
+$F010 -> $F012  Random number registers
+$F014           Interrupt source register
 ```
 
 ## PDP-11/20 CPU Background Info
